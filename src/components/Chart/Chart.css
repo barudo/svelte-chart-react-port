@@ -164,6 +164,11 @@ svg path {
   stroke: black;
 }
 
+.tooltip-cover {
+  fill: var(--active-bg-colour);
+  stroke: none;
+}
+
 .tooltip text {
   stroke: none;
   fill: black;

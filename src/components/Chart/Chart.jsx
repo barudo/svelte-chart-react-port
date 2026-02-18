@@ -332,32 +332,42 @@ export default function Chart({ visits, metrics }) {
                         {met.map((val) => {
                           const x = xScale(val.date)
                           const y = yScale(val.value)
-                          const visible = activeVisit && (val.date - activeVisit === 0)
                           return (
                             <g key={`${key}-${val.date.toISOString()}-${val.value}`}>
                               <circle className="value-dot" cx={x} cy={y} r={3} />
-                              <g className="tooltip" style={{ visibility: visible ? 'visible' : undefined }}>
-                                <rect
-                                  className="tooltip-bg"
-                                  x={x + 3}
-                                  y={(y < 26 ? 4 : y - 22)}
-                                  rx="3"
-                                  ry="3"
-                                  width="24"
-                                  height="18"
-                                />
-                                <text
-                                  x={x + 15}
-                                  y={(y < 26 ? 19 : y - 7)}
-                                  textAnchor="middle"
-                                  style={{ fontSize: getValueFontSize(val.value, 12) }}
-                                >
-                                  {val.value}
-                                </text>
-                              </g>
                             </g>
                           )
                         })}
+                        {(() => {
+                          if (!activeVisit) return null
+                          const activeValue = met.find((val) => val.date - activeVisit === 0)
+                          if (!activeValue) return null
+                          const x = xScale(activeValue.date)
+                          const y = yScale(activeValue.value)
+                          const boxY = Math.max(4, y - 24)
+                          return (
+                            <g className="tooltip" style={{ visibility: 'visible' }}>
+                              <circle className="tooltip-cover" cx={x} cy={y} r={5} />
+                              <rect
+                                className="tooltip-bg"
+                                x={x + 3}
+                                y={boxY}
+                                rx="3"
+                                ry="3"
+                                width="24"
+                                height="18"
+                              />
+                              <text
+                                x={x + 15}
+                                y={boxY + 15}
+                                textAnchor="middle"
+                                style={{ fontSize: getValueFontSize(activeValue.value, 12) }}
+                              >
+                                {activeValue.value}
+                              </text>
+                            </g>
+                          )
+                        })()}
                       </>
                     ) : (
                       met.map((val) => {
