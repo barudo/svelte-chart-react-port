@@ -1,0 +1,112 @@
+[
+  {
+    "lab/name": "CDAI",
+    "lab/value": 22,
+    "lab/when": "2023-01-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "CDAI",
+    "lab/value": 18,
+    "lab/when": "2023-03-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "CDAI",
+    "lab/value": 25,
+    "lab/when": "2023-06-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "CDAI",
+    "lab/value": 28,
+    "lab/when": "2023-09-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "CDAI",
+    "lab/value": 24,
+    "lab/when": "2023-12-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "CDAI",
+    "lab/value": 19,
+    "lab/when": "2024-03-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 6,
+    "lab/when": "2023-01-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 5,
+    "lab/when": "2023-03-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 7,
+    "lab/when": "2023-06-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 6,
+    "lab/when": "2023-09-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 4,
+    "lab/when": "2023-12-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+  {
+    "lab/name": "Patient Global",
+    "lab/value": 5,
+    "lab/when": "2024-03-15T00:00:00Z",
+    "lab/demographic": 1
+  },
+
+  {
+    "lab/name": "CRP",
+    "lab/value": 12,
+    "lab/when": "2023-01-15T00:00:00Z",
+    "lab/demographic": 2
+  },
+  {
+    "lab/name": "CRP",
+    "lab/value": 9,
+    "lab/when": "2023-03-15T00:00:00Z",
+    "lab/demographic": 2
+  },
+  {
+    "lab/name": "CRP",
+    "lab/value": 14,
+    "lab/when": "2023-06-15T00:00:00Z",
+    "lab/demographic": 2
+  },
+  {
+    "lab/name": "CRP",
+    "lab/value": 11,
+    "lab/when": "2023-09-15T00:00:00Z",
+    "lab/demographic": 2
+  },
+  {
+    "lab/name": "CRP",
+    "lab/value": 8,
+    "lab/when": "2023-12-15T00:00:00Z",
+    "lab/demographic": 2
+  },
+  {
+    "lab/name": "CRP",
+    "lab/value": 10,
+    "lab/when": "2024-03-15T00:00:00Z",
+    "lab/demographic": 2
+  }
+]

@@ -1,0 +1,203 @@
+:root {
+  --active-stroke-colour: #0b605e;
+  --active-bg-colour: #e5f0f7;
+  --inactive-header-stroke-colour: #71304a;
+  --inactive-stroke-colour: #d28aa8;
+  --inactive-bg-colour: #f2d9f4;
+}
+
+#chart-grid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  min-height: 0;
+}
+
+.region {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#options-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group {
+  display: flex;
+}
+
+.button {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+  width: 5.8em;
+  text-align: center;
+}
+
+.button-left {
+  border-radius: 6px 0 0 6px;
+}
+
+.button-right {
+  border-radius: 0 6px 6px 0;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#chart {
+  border: 1px solid lightgrey;
+  border-radius: 8px 8px 0 0;
+  height: 100%;
+  min-height: 0;
+}
+
+.chart-row {
+  display: flex;
+}
+
+.column-header {
+  position: relative;
+}
+
+.column-header > div {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  color: grey;
+  font-size: 0.9em;
+}
+
+.metric-row {
+  margin: 0;
+  border-top: 1px solid #ffc2db;
+}
+
+.metric-header {
+  position: relative;
+  background-color: var(--inactive-bg-colour);
+  box-sizing: content-box;
+  color: var(--inactive-header-stroke-colour);
+}
+
+.metric-text {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+}
+
+.active-metric {
+  outline: 1px solid var(--active-stroke-colour);
+  border: none;
+}
+
+.active-metric .metric-header {
+  color: var(--active-stroke-colour);
+  background-color: var(--active-bg-colour);
+}
+
+.active-metric path {
+  stroke: var(--active-stroke-colour);
+}
+
+.active-metric circle {
+  fill: var(--active-stroke-colour);
+}
+
+svg {
+  height: 100%;
+  stroke: rgb(180, 180, 180);
+}
+
+svg line {
+  stroke-width: 0.5px;
+  fill: none;
+}
+
+svg path {
+  fill: none;
+}
+
+.visit circle:hover,
+.metric-header {
+  cursor: pointer;
+}
+
+.visit circle {
+  stroke: grey;
+  fill: white;
+}
+
+.visit-label {
+  font-size: 10px;
+  fill: grey;
+  stroke: none;
+  pointer-events: none;
+  dominant-baseline: middle;
+}
+
+.active-visit {
+  stroke: var(--active-stroke-colour);
+}
+
+.active-visit circle {
+  fill: var(--active-bg-colour);
+}
+
+.tooltip {
+  stroke: black;
+  fill: var(--active-bg-colour);
+  visibility: hidden;
+}
+
+.tooltip text {
+  stroke: none;
+  fill: black;
+}
+
+.value-dot:hover + .tooltip {
+  visibility: visible;
+}
+
+.value-dot {
+  stroke: black;
+}
+
+.value-box {
+  fill: var(--inactive-stroke-colour);
+  stroke: white;
+}
+
+.value-text {
+  stroke: none;
+  fill: white;
+}
+
+.axis-vertical {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  margin-right: 3px;
+  font-size: 0.8em;
+  color: grey;
+}
+
+.axis-horizontal {
+  fill: grey;
+  stroke: none;
+  font-size: 0.85em;
+}
