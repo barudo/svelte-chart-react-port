@@ -26,7 +26,16 @@ export default function Metrics({ height = '600px', width = '800px' }) {
   const metrics = useMemo(() => processLabs(selectedData.testlabs), [selectedData])
 
   const vsort = useMemo(() => {
-    return (selectedData.visits || []).map((d) => new Date(d)).sort((a, b) => a - b)
+    const dates = (selectedData.visits || []).map((d) => new Date(d))
+    const seen = new Set()
+    const unique = []
+    for (const d of dates) {
+      const time = d.getTime()
+      if (seen.has(time)) continue
+      seen.add(time)
+      unique.push(d)
+    }
+    return unique.sort((a, b) => a - b)
   }, [selectedData])
 
   return (
