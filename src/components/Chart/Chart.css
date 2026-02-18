@@ -146,6 +146,17 @@ svg path {
   dominant-baseline: middle;
 }
 
+.visit-tooltip-bg {
+  fill: var(--active-bg-colour);
+  stroke: black;
+}
+
+.visit-tooltip-text {
+  fill: black;
+  stroke: none;
+  font-size: 11px;
+}
+
 .active-visit {
   stroke: var(--active-stroke-colour);
 }

@@ -269,6 +269,7 @@ export default function Chart({ visits, metrics }) {
                 {visits.map((v) => {
                   const x = xScale(v)
                   const active = activeVisit === v
+                  const visitLabel = `${MONTHS[v.getMonth()]} ${v.getDate()}, ${v.getFullYear()}`
                   return (
                     <g key={v.toISOString()} className={`visit ${active ? 'active-visit' : ''}`.trim()}>
                       <line x1={x} x2={x} y1={svgHeight * 0.8} y2={svgHeight} />
@@ -279,6 +280,27 @@ export default function Chart({ visits, metrics }) {
                         onClick={() => setActiveVisit(active ? null : v)}
                       />
                       <text className="visit-label" x={x} y={svgHeight * 0.8} textAnchor="middle">v</text>
+                      {active && (
+                        <g className="visit-tooltip">
+                          <rect
+                            className="visit-tooltip-bg"
+                            x={x - 42}
+                            y={svgHeight * 0.8 - 28}
+                            rx="3"
+                            ry="3"
+                            width="84"
+                            height="18"
+                          />
+                          <text
+                            className="visit-tooltip-text"
+                            x={x}
+                            y={svgHeight * 0.8 - 15}
+                            textAnchor="middle"
+                          >
+                            {visitLabel}
+                          </text>
+                        </g>
+                      )}
                     </g>
                   )
                 })}
