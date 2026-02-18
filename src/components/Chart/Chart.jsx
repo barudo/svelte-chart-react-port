@@ -146,6 +146,12 @@ export default function Chart({ visits, metrics }) {
     [activeScale]
   )
 
+  const getValueFontSize = useCallback((value, base) => {
+    const len = String(Math.abs(value)).replace(/\D/g, '').length
+    if (len >= 3) return `${Math.max(base - 2, 8)}px`
+    return `${base}px`
+  }, [])
+
   const handleWheel = useCallback(
     (event) => {
       if (!activeVisit) return
@@ -331,8 +337,23 @@ export default function Chart({ visits, metrics }) {
                             <g key={`${key}-${val.date.toISOString()}-${val.value}`}>
                               <circle className="value-dot" cx={x} cy={y} r={3} />
                               <g className="tooltip" style={{ visibility: visible ? 'visible' : undefined }}>
-                                <rect x={x + 3} y={(y < 26 ? 4 : y - 22)} rx="3" ry="3" width="24" height="18" />
-                                <text x={x + 15} y={(y < 26 ? 19 : y - 7)} textAnchor="middle">{val.value}</text>
+                                <rect
+                                  className="tooltip-bg"
+                                  x={x + 3}
+                                  y={(y < 26 ? 4 : y - 22)}
+                                  rx="3"
+                                  ry="3"
+                                  width="24"
+                                  height="18"
+                                />
+                                <text
+                                  x={x + 15}
+                                  y={(y < 26 ? 19 : y - 7)}
+                                  textAnchor="middle"
+                                  style={{ fontSize: getValueFontSize(val.value, 12) }}
+                                >
+                                  {val.value}
+                                </text>
                               </g>
                             </g>
                           )
@@ -344,7 +365,15 @@ export default function Chart({ visits, metrics }) {
                         return (
                           <g key={`${key}-${val.date.toISOString()}-${val.value}-box`}>
                             <rect className="value-box" x={x - 12} y={midY - 12} rx="3" ry="3" width="24" height="24" />
-                            <text className="value-text" x={x} y={midY + 6} textAnchor="middle">{val.value}</text>
+                            <text
+                              className="value-text"
+                              x={x}
+                              y={midY + 6}
+                              textAnchor="middle"
+                              style={{ fontSize: getValueFontSize(val.value, 12) }}
+                            >
+                              {val.value}
+                            </text>
                           </g>
                         )
                       })

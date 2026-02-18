@@ -155,9 +155,13 @@ svg path {
 }
 
 .tooltip {
-  stroke: black;
-  fill: var(--active-bg-colour);
   visibility: hidden;
+  pointer-events: none;
+}
+
+.tooltip-bg {
+  fill: var(--active-bg-colour);
+  stroke: black;
 }
 
 .tooltip text {
