@@ -35,44 +35,42 @@
     "lab/when": "2024-03-15T00:00:00Z",
     "lab/demographic": 1
   },
-
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 6,
     "lab/when": "2023-01-15T00:00:00Z",
     "lab/demographic": 1
   },
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 5,
     "lab/when": "2023-03-15T00:00:00Z",
     "lab/demographic": 1
   },
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 7,
     "lab/when": "2023-06-15T00:00:00Z",
     "lab/demographic": 1
   },
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 6,
     "lab/when": "2023-09-15T00:00:00Z",
     "lab/demographic": 1
   },
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 4,
     "lab/when": "2023-12-15T00:00:00Z",
     "lab/demographic": 1
   },
   {
-    "lab/name": "Patient Global",
+    "lab/name": "Provider Global",
     "lab/value": 5,
     "lab/when": "2024-03-15T00:00:00Z",
     "lab/demographic": 1
   },
-
   {
     "lab/name": "CRP",
     "lab/value": 12,
